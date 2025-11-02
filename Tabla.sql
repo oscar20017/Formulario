@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS `biblioteca_la_roca`
+  DEFAULT CHARACTER SET utf8mb4
+  DEFAULT COLLATE utf8mb4_unicode_ci;
+USE `biblioteca_la_roca`;
+
+CREATE TABLE IF NOT EXISTS afiliados (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100) NOT NULL,
+  apellido VARCHAR(100) NOT NULL,
+  edad INT NOT NULL,
+  cedula VARCHAR(20) UNIQUE NOT NULL,
+  telefono VARCHAR(20),
+  correo VARCHAR(100) UNIQUE NOT NULL,
+  contrasena VARCHAR(255) NOT NULL,
+  fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
